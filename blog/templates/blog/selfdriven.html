@@ -1,0 +1,90 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<head>
+    <style>
+        .ptext{
+            margin-left:0px;
+            margin-right: auto;
+            width: 60% ;
+            text-align:left;
+        }
+        .heading{
+            padding-left: 50px;
+        }
+        .main_content{
+          display: flex;
+          padding-left: 50px;
+        }
+        
+        .side_image{
+          margin-right: 100px;
+          
+        }
+        
+    </style>
+   
+</head> 
+<section class="container1">
+
+<div class="row custom">
+  <div class="heading">
+    <h1 class="car1">Self
+    <span style="color:blue"> Drive Car Rental </span>
+    <span><a style="height: 10px;" class="btn1" href="{% url 'blog:choose_car' %}">CHECK OUR CARS</a></span>
+    </h1>
+  </div>
+    
+</div>
+<div class="main_content">
+  <div class="page-text">
+       <p><strong style="font-size: 18px;display: block; ">Make you travelling an ease with CarMania</strong></p>
+       <p class="ptext">Carmania gets you the experience you seek in traveling with our luxurious, comfortable and within budget cars. Our fleet has all the cars that you want for your traveling desires.  We know it is not easy for outsiders to navigate smoothly in Bangladesh. Traveling becomes even worst when you don’t have the right vehicle in hand.   Perhaps that is the reason we came up with <strong>Self-drive car rental</strong> options for the travellers. If you love to drive cars but you feel that you won’t get one within your budget when you are on an alien land; we prove you wrong. We get you the cars of your choice that too within a range that is not at all a pain for anyone.</p>
+
+       <p><strong style="font-size: 18px;display: block;">Easy to pick</strong></p>
+       <p class="ptext">Once you have talked to our representatives you can easily pick the car you want and there won’t be any tedious or drudging formalities. We understand your condition and always want to make your stay in Dhaka and Bangladesh comfortable and time effective. Talk to us and we hand you the keys of the cars.</p>
+
+       <p><strong style="font-size: 18px;display: block;">Variety in packages</strong></p>
+       <p class="ptext">We don’t limit your traveling aspirations. You can simply go for any of the packages we have and the car is yours. Whether you want car for an hour, a few hours or an entire day or more; we have that perfect package for you.   Our car rental packages make us the best rental services in the vicinity.  The best thing is Carmania covers all the options that a traveller might want to opt for. Once you have taken our <strong>self-drive cars in Dhaka</strong> you will not have to rely on anyone. Don’t take favours unnecessary when we get you the cars on the go!
+
+        So, we don’t tell you to blindly trust us. Go ahead, take our services, experience and then keep a verdict! We are sure that our cars won’t disappoint you!</p>
+
+       <div class="ptext"style="border-bottom:solid windowtext 1.0pt; padding: 0in 0in 1.0pt 0in ;">
+    
+        <p style="text-align: justify">&nbsp;</p>
+    </div>
+
+       <p><strong style="font-size: 18px;display: block;">Description</strong></p>
+       <ul>
+           <li class="ptext" style="text-align: justify">Enjoy traveling with selfdrive car rental.  Our selfdrive cars in Dhaka will get you to your spots in Bangladesh with a smile on your face. Rule the roads with us!</li>
+           <li class="ptext" style="text-align: justify">Make traveling a boon with selfdrive car rental. Once opted for self-drive cars in Dhaka, you won’t regret it. Stay ahead of other tourists with best cars in your hand.
+        </li>
+</ul>
+
+   <p><strong style="font-size: 18px;display: block; ">Meta description for social networking sites</strong></p>
+   <p class="ptext">Save your day with our self-drive car rental. Once you tried self-drive cars in Dhaka, the roads will call you for exploration. Siting tours or important visits; make it happen with our car rentals for you.</p>
+   <p style="text-align: justify">&nbsp;</p>
+
+
+   <p><strong style="font-size: 18px;display: block;">Catchy line</strong></p>
+   <p class="ptext">Fall in love with Bangladesh with our self-drive car rental Facilities. Indeed, once self-drive cars in Dhaka are in your hand; you are going to be enchanted for sure.</p>
+
+</div>
+<div class="side_image">
+  <img  src="../static/blog/images/car3.jpg">
+</div>
+</div>
+
+
+
+</section>
+<div class="footer">
+   
+        <a style="font-size: 30px;" href="{% url 'blog:home_page' %}">CARMANIA</a>
+        <p> Hotline: +88 096 629 712<br>
+            WhatsApp: +88 01622 629 712<br>
+            Email: contact@carmania.com.bd
+          </p>
+    
+</div>
+{% endblock %}

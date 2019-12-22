@@ -1,0 +1,68 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+
+<style>
+
+.jumbotron{
+		background: url(../static/blog/images/gold.jpg);
+		background-size: cover;
+		margin-bottom: auto;
+		height: 1500px;
+		background-attachment: fixed;
+		color: white;
+		align-items: center;
+	}
+
+
+.content-table{
+
+border-collapse: separate;
+margin: 30px 150px 10px;
+font-size: 20px;
+width: 58%;
+
+}
+.content-table thead tr{
+
+ color: cadetblue;
+ text-align: left;
+ border-spacing: 30px;
+}
+
+
+
+
+</style>
+<div class="jumbotron">
+  <h1 style="text-align:center; margin-top: -20px">Available Cars</h1>
+  
+<!-- <img style="border-radius: 50%;width:60px;height:60px;" src="{{ user.user_profile.image.url }}"> -->
+
+<table class="content-table">
+  <thead>
+    <th style="font-size: larger; color: blue ">Pictures</th>
+    <th style="font-size: larger; color:blue " >Choose Your Car</th>
+</thead>
+
+
+
+
+{% for value1 in post %}
+        <tr>
+           <!---- <h1 style="margin-left:10px;">{{ value1.author }}</h1> -->
+            <td><img style="width:300px; height:200px;" src="{{ value1.image.url }}"></td>
+            <td style="list-style-type: none;">
+            <li style="color: white; font-weight: bolder;font-size: larger" >Car Name : <a href="{% url 'blog:detail' pk=value1.pk %}">{{ value1.car_name }}</a></li>
+            </tr>
+        {% endfor %}
+        </table>
+        <!-- {% for value1 in image %}
+            <img style="border-radius: 50%;width:60px;height:60px;" src="{{ value1.image.url }}">
+        {% endfor %} -->
+
+</div>
+
+{% endblock %}

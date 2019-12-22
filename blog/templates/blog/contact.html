@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<body class="body">
+  <div class="form_d">
+    {% crispy form %}
+  </div>
+  </body>
+{% endblock %}

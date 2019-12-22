@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Carmania</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+
+  </head>
+  <body style="overflow-x:hidden;">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+        <a class="navbar-brand" href="#" id="logoimg"><img src="{% static 'blog/images/carlogo.jpg' %}" height="100px"
+          width="100px"></a>
+      <li class="nav-item active">
+        <a class="nav-link color1" href="{% url 'blog:home_page' %}">Home</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link color2" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Service
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'blog:buycar' %}">Buy Car</a>
+          <a class="dropdown-item" href="{% url 'blog:sellcar' %}">Sell Car</a>
+          <a class="dropdown-item" href="{% url 'blog:rent' %}">Rent Car</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link color3" href="{% url 'blog:contact' %}">Contact</a>
+      </li>
+      {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link color4" href="{% url 'users:profile' %}">Welcome : {{ user.username }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link color4" href="{% url 'users:logout' %}">Logout</a>
+          </li>
+      {% else %}
+          <li class="nav-item">
+            <a class="nav-link color4" href="{% url 'users:login' %}">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link color4" href="{% url 'users:registration' %}">Register</a>
+          </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+  {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+  {% block body %}
+  {% endblock %}
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

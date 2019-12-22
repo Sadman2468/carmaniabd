@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="jumbotron">
+
+    <hr>
+    <p>Car Name : {{ object.car_name }}</a></p>
+    <p><img style="width:300px;height:200px;" src="{{ object.image.url }}"></p>
+    <p>Car Type : {{ object.car_type }}</p>
+    <p>Seat Capacity : {{ object.seat_capacity }}</p>
+    <p>Contact Number : {{ object.contact_number }}</p>
+    <p>Location : {{ object.location }}</p>
+
+</div>
+{% endblock %}

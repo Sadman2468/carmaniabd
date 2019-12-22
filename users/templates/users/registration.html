@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="jumbotron">
+    <h1>Join Today</h1>
+      {% crispy form %}
+      <hr>
+      <h5>Already have an Account: <a style="margin-right: -10px" href="{% url 'users:login' %}">Login</a>
+      </h5>
+</div>
+{% endblock %}

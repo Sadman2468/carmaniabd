@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block body %}
+
+<div class="functions">
+  <div class="container2">
+    <div class="box_border">
+      <div class="boxes">
+        <div class="box1"></div>
+  <!-- <input type="submit" name="Give Rent"> -->
+        <div class="box2"></div>
+  <!-- <input type="submit" name="Give Rent"> -->
+        <div class="box3"></div>
+  <!-- <input type="submit" name="Give Rent"> -->
+      </div>
+      <div class="button_box">
+        <a href="{% url 'blog:giverent' %}"><input type="submit" value="Give rent"></a>
+        <a href="{% url 'blog:takerent' %}"><input type="submit" value="Take rent"></a>
+        <a href="{% url 'blog:selfdriven' %}"><input type="submit" value="Self drive"></a>
+    </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}

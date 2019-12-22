@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<body class="body2">
+  <div class="form_d2">
+    <div class="container"><h1 class="car">Rent A Car</h1></div>
+    <form method="POST" enctype="multipart/form-data" > {% csrf_token %} 
+      {{form.as_p}}
+        
+    <button style="margin-left: 10px" type="submit" class="btn btn-primary">Upload File</button>
+  </form>
+   
+  </div>
+  </body>
+{% endblock %}

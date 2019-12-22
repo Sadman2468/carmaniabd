@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+
+{% block body %}
+<div class="jumbotron">
+    <div class="media">
+      <img style="border-radius: 50%;width:100px;height:100px;" src="{{ user.user_profile.image.url }}">
+    </div>
+    <h1>Username : {{ user.username }}</h1>
+    <hr>
+    <h1>Email : {{ user.email }}</h1>
+</div>
+{% endblock %}

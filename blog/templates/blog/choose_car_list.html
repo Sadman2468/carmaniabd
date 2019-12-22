@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+  <style>
+
+body{
+      background-image: url(../static/blog/images/audi.jpg);
+      background-size: cover;
+    }
+
+        .content-table{
+
+          border-collapse: separate;
+           margin-left: 40px;
+           font-size: 20px;
+           width: 100%;
+
+        }
+
+        .content-table thead tr{
+
+                   color: cadetblue;
+                   text-align: left;
+        }
+
+  </style>
+
+<body>
+<h1 style="text-align: center; margin-top:20px; color: white">Choose your desire car</h1>
+
+<table class="content-table">
+  <thead>
+    <th>Pictures</th>
+    <th>Info</th>
+
+</thead>
+  {% for value3 in post %}
+  <tr>
+    <td><img style="width:300px;height:200px;" src="{{ value3.image.url }}"></td>
+    <td style="list-style-type: none;"><li style="color: white" >Car Name : {{ value3.car_name }}</li>
+         <li style="color: white" >Contact Number : {{ value3.contact }}</li>
+         <li style="color: white" >Client Name : {{ value3.client }}</li>
+       <li style="color: white" >Description : {{ value3.description }}</td></li>
+       <td style="color:white;"><a href="{% url 'blog:User_f' %}"><input class="btn btn-success" type="submit" name="" value="Book Now"></a></td>
+
+  </tr>
+  {% endfor %}
+</table>
+
+</body>
+{% endblock %}

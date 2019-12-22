@@ -1,0 +1,75 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<style>
+	.jumbotron{
+		background: url(../static/blog/images/pic1.jpg);
+		background-size: cover;
+		margin-bottom: auto;
+		height: 1500px;
+		background-attachment: fixed;
+		color: white;
+		align-items: center;
+	}
+
+	
+
+		.content-table{
+
+           border-collapse: separate;
+           margin: 30px 150px 10px;
+           font-size: 20px;
+           width: 58%;
+
+        }
+        .content-table thead tr{
+
+            color: cadetblue;
+            text-align: left;
+            border-spacing: 30px;
+        }
+	/*.type_car{
+		display: flex;
+		
+		
+	}*/
+	/*.type_name{
+		display: flex;
+	}*/
+	/*.type{
+		margin-top: 79px;
+    	margin-left: 300px;
+	}
+*//*
+	.type_name p{
+		margin-left: 130px;
+	}*/
+
+
+</style>
+
+<div class="jumbotron">
+		<h1 style="text-align: center; margin-top:-30px">Choose your desire car</h1>  
+
+
+		<table class="content-table">
+  			<thead>
+    			<th>Pictures</th>
+    			<th>Info</th>
+
+			</thead>
+  			{% for value2 in post %}
+ 			 <tr>
+    			<td><img style="width:300px; height:200px;" src="{{ value2.image.url }}"></td>
+    			<td style="list-style-type: none;">
+    				<li style="color: white" >Car Name : <a href="{% url 'blog:detail1' pk=value2.pk %}">{{ value2.car_name }}</a></li>
+         			<!-- <li style="color: white" >Contact Number : {{ value3.contact }}</li>
+         			<li style="color: white" >Client Name : {{ value3.client }}</li>
+       				<li style="color: white" >Description : {{ value3.description }}</td></li> -->
+
+
+  			</tr>
+  			{% endfor %}
+			</table>
+</div>
+{% endblock %}

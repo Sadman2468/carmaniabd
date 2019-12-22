@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+
+{% block body %}
+<style>
+.jumbotron {
+  background-image: url(/static/blog/images/carsell.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:750px ; }
+
+.form_d3 {
+  margin-left: 25%;
+  margin-top: 50px;
+  margin-right: 25%;
+  padding: 30px;
+  background-color: #14151582;
+  background-size: cover;
+  font-size: large;
+  font-weight: 700;
+  color: #00BFFF; }
+
+
+</style>
+
+
+
+<div class="jumbotron">
+  <div class="form_d3">
+    <div class="container"><h1 class="car">Sell A Car</h1></div>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+      <button style="margin-left: 10px" class="btn btn-success" type="submit" name="button">Post</button>
+  </form>
+  </div>
+
+</div>
+
+
+{% endblock %}

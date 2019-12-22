@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block body %}
+<div class="jumbotron">
+    <!-- <img style="border-radius: 50%;width:60px;height:60px;" src="{{ user.user_profile.image.url }}"> -->
+    <h1>{{ object.author }}</h1>
+      <hr>
+    <p>Car Name : {{ object.car_name }}</a></p>
+    <p>Engine Capacity  : {{ object.engine_capacity }}</a></p>
+    <p>Model : {{ object.model }}</a></p>
+    <p>Color : {{ object.color }}</a></p>
+    <p>Seat Capacity : {{ object.seat_capacity }}</a></p>
+    <p>Price : {{ object.price }}</a></p>
+    <p><img style="width:300px;height:200px;" src="{{ object.image.url }}"></p>
+</div>
+{% endblock %}
